@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Text;
 using KsondzykLab1.Annotations;
 using KsondzykLab1.Models;
 using KsondzykLab1.Tools.MVVM;
@@ -11,34 +9,50 @@ namespace KsondzykLab1.ViewModels
 {
     internal class ViewModel : INotifyPropertyChanged
     {
-        private RelayCommand<object> _dateChosenCommand;
+        private RelayCommand<object> _startCommand;
         private User _user;
         private bool _filled;
+        private string _age;
+        private string _easternZodiac;
+        private string _westernZodiac;
+
+        public DateTime Birthday
+        {
+            get
+            {
+                return _user.Birthday;
+            }
+            set
+            {
+                _user.Birthday = value;
+                OnPropertyChanged();
+            }
+        }
 
         public string Age
         {
-            get => _user.Age;
+            get => _age;
             set
             {
-                _user.Age = value;
+                _age = value;
                 OnPropertyChanged();
             }
         }
         public string EasternZodiac
         {
-            get => _user.EasternZodiac;
+            get => _easternZodiac;
             set
             {
-                _user.EasternZodiac = value;
+                _easternZodiac = value;
                 OnPropertyChanged();
             }
         }
         public string WesternZodiac
         {
-            get => _user.WesternZodiac;
+            get => _westernZodiac;
             set
             {
-                _user.WesternZodiac = value;
+                _westernZodiac = value;
                 OnPropertyChanged();
             }
         }
@@ -49,13 +63,13 @@ namespace KsondzykLab1.ViewModels
         }
 
 
-        public RelayCommand<object> DateCommand
+        public RelayCommand<object> StartCommand
         {
             get
             {
-                return _dateChosenCommand ??= new RelayCommand<object>(o =>
+                return _startCommand ??= new RelayCommand<object>(o =>
                     {
-                        _user.CalculateAge();
+                       Age = _user.CalculateAge();
                     }
                 );
             }
