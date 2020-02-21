@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows;
 
 namespace KsondzykLab1.Models
 {
@@ -9,9 +10,10 @@ namespace KsondzykLab1.Models
         private string _easternZodiac;
         private string _westernZodiac;
 
-        public User(DateTime birthday)
+        public DateTime Birthday
         {
-            _birthday = birthday;
+            get => this._birthday;
+            set => this._birthday = value;
         }
 
         public string Age
@@ -45,7 +47,10 @@ namespace KsondzykLab1.Models
             //{
             //    MessageBox.Show("Некоректна дата!");
             //}
-
+            if (years > 135 || timeSpan.Days < 0)
+            {
+                return "n";
+            }
             this._age = years.ToString();
             return years.ToString();
         }
