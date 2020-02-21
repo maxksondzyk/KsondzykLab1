@@ -8,16 +8,31 @@ namespace KsondzykLab1.Models
 {
     internal class User
     {
-        private string _age { get; set; }
-        private DateTime _birthday { get; }
-        private string _easternZodiac { get; set; }
-        private string _westernZodiac { get; set; }
+        private string _age;
+        private DateTime _birthday;
+        private string _easternZodiac;
+        private string _westernZodiac;
 
         public User(DateTime birthday)
         {
             _birthday = birthday;
         }
 
+        public string Age
+        {
+            get => this._age;
+            set => this._age = value;
+        }
+        public string EasternZodiac
+        {
+            get => this._easternZodiac;
+            set => this._easternZodiac = value;
+        }
+        public string WesternZodiac
+        {
+            get => this._westernZodiac;
+            set => this._westernZodiac = value;
+        }
         public string CalculateAge()
         {
             var leapYears = (DateTime.Now.Year - this._birthday.Year) / 4;

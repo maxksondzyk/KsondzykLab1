@@ -1,0 +1,5 @@
+C:\Users\Max\KsondzykLab1\KsondzykLab1\obj\Debug\netcoreapp3.1\KsondzykLab1.csprojAssemblyReference.cache
+C:\Users\Max\KsondzykLab1\KsondzykLab1\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\Max\KsondzykLab1\KsondzykLab1\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\Max\KsondzykLab1\KsondzykLab1\obj\Debug\netcoreapp3.1\KsondzykLab1_MarkupCompile.cache
+C:\Users\Max\KsondzykLab1\KsondzykLab1\obj\Debug\netcoreapp3.1\KsondzykLab1_MarkupCompile.lref
