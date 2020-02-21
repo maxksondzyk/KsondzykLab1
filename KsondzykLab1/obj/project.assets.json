@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Max\\source\\repos\\KsondzykLab1\\KsondzykLab1\\KsondzykLab1.csproj",
+      "projectUniqueName": "C:\\Users\\Max\\KsondzykLab1\\KsondzykLab1\\KsondzykLab1.csproj",
       "projectName": "KsondzykLab1",
-      "projectPath": "C:\\Users\\Max\\source\\repos\\KsondzykLab1\\KsondzykLab1\\KsondzykLab1.csproj",
+      "projectPath": "C:\\Users\\Max\\KsondzykLab1\\KsondzykLab1\\KsondzykLab1.csproj",
       "packagesPath": "C:\\Users\\Max\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Max\\source\\repos\\KsondzykLab1\\KsondzykLab1\\obj\\",
+      "outputPath": "C:\\Users\\Max\\KsondzykLab1\\KsondzykLab1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Max\\AppData\\Roaming\\NuGet\\NuGet.Config",
