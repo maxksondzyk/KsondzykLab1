@@ -6,11 +6,11 @@ namespace KsondzykLab1.Models
     internal class User
     {
         private string _age;
-        private DateTime _birthday;
+        private DateTime? _birthday;
         private string _easternZodiac;
         private string _westernZodiac;
 
-        public DateTime Birthday
+        public DateTime? Birthday
         {
             get => this._birthday;
             set => this._birthday = value;
@@ -33,9 +33,9 @@ namespace KsondzykLab1.Models
         }
         public string CalculateAge()
         {
-            var leapYears = (DateTime.Now.Year - this._birthday.Year) / 4;
+            var leapYears = (DateTime.Now.Year - this._birthday.Value.Year) / 4;
             var leapDays = leapYears * 366;
-            var timeSpan = (DateTime.Today - _birthday.Date);
+            var timeSpan = (DateTime.Today - _birthday.Value.Date);
             var totalDays = timeSpan.Days;
             totalDays -= leapDays;
             var years = leapYears + totalDays / 365;
@@ -56,7 +56,7 @@ namespace KsondzykLab1.Models
         }
         public string CalculateEasternZodiac()
         {
-            var result = (_birthday.Year % 12) switch
+            var result = (_birthday.Value.Year % 12) switch
             {
                 4 => "Щур",
                 5 => "Бик",
@@ -75,8 +75,8 @@ namespace KsondzykLab1.Models
         }
         public string CalculateWesternZodiac()
         {
-            var day = _birthday.Day;
-            var Result = _birthday.Month switch
+            var day = _birthday.Value.Day;
+            var Result = _birthday.Value.Month switch
             {
                 3 => (day >= 21 ? "Овен" : "Риби"),
                 4 => (day <= 20 ? "Овен" : "Телець"),

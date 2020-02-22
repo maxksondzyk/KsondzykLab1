@@ -15,11 +15,11 @@ namespace KsondzykLab1.ViewModels
         private RelayCommand<object> _startCommand;
         private User _user = new User();
         private bool _filled = false;
-        private string _age;
-        private string _easternZodiac;
-        private string _westernZodiac;
+        //private string _age;
+        //private string _easternZodiac;
+        //private string _westernZodiac;
 
-        public DateTime Birthday
+        public DateTime? Birthday
         {
             get => _user.Birthday;
             set
@@ -33,28 +33,28 @@ namespace KsondzykLab1.ViewModels
 
         public string Age
         {
-            get => _age;
+            get => _user.Age;
             set
             {
-                _age = value;
+                _user.Age = value;
                 OnPropertyChanged();
             }
         }
         public string EasternZodiac
         {
-            get => _easternZodiac;
+            get => _user.EasternZodiac;
             set
             {
-                _easternZodiac = value;
+                _user.EasternZodiac = value;
                 OnPropertyChanged();
             }
         }
         public string WesternZodiac
         {
-            get => _westernZodiac;
+            get => _user.WesternZodiac;
             set
             {
-                _westernZodiac = value;
+                _user.WesternZodiac = value;
                 OnPropertyChanged();
             }
         }
@@ -81,22 +81,30 @@ namespace KsondzykLab1.ViewModels
             EasternZodiac = "";
             await Task.Run(() =>
             {
-                // Thread.Sleep(3000);
-                   // var user = new User();
-                    Age = $"Ваш вік: {_user.CalculateAge()}";
+                 Thread.Sleep(3000);
+                // var user = new User();
+                if (_user.CalculateAge().Equals("n"))
+                {
+                    MessageBox.Show("Некоректний вік!");
+                    Age = "";
+                    WesternZodiac = "";
+                    EasternZodiac = "";
+                }
+
+                else
+                {
+                    Age = $"Ваш вік: {_user.Age}";
+
                     WesternZodiac = $"Ваш західний знак зодіаку: {_user.CalculateWesternZodiac()}";
                     EasternZodiac = $"Ваш східний знак зодіаку: {_user.CalculateEasternZodiac()}";
-                    //Thread.Sleep(3000);
-                    if (_user.Birthday.DayOfYear.Equals(DateTime.Today.DayOfYear))
+                    Thread.Sleep(3000);
+
+                    if (_user.Birthday.Value.DayOfYear.Equals(DateTime.Today.DayOfYear))
                     {
                         MessageBox.Show("З днем народження!");
                     }
 
-                    if (_user.Age.Equals("n"))
-                    {
-                        MessageBox.Show("Некоректний вік!");
-                    }
-
+                }
             });
         }
 
