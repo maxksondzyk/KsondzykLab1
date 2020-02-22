@@ -24,6 +24,7 @@ namespace KsondzykLab1.ViewModels
                 _user.Birthday = value;
                 if (value != null)
                     _filled = true;
+                else _filled = false;
                 OnPropertyChanged();
             }
         }
@@ -79,7 +80,7 @@ namespace KsondzykLab1.ViewModels
             await Task.Run(() =>
             {
                  Thread.Sleep(700);
-                // var user = new User();
+              
                 if (_user.CalculateAge().Equals("n"))
                 {
                     MessageBox.Show("Incorrect date!");
