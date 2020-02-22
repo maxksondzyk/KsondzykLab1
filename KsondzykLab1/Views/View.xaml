@@ -15,15 +15,16 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="200"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <DatePicker 
             Grid.Column="1"
             VerticalAlignment="Stretch"
             HorizontalAlignment="Stretch"
             FontSize="20"
+            FirstDayOfWeek="Monday" 
             SelectedDate ="{Binding Birthday, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DatePicker>
         <Button Grid.Row="1"
                 Grid.Column="1"
@@ -35,21 +36,21 @@
         >Вперед!</Button>
         <TextBlock Grid.Row="2" 
                    Grid.Column="1"
-                   Grid.ColumnSpan="2" Margin="10"
+                   Margin="10"
                    HorizontalAlignment="center"
                    FontSize="20"
                    Text ="{Binding Age, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
         </TextBlock>
         <TextBlock Grid.Row="3" 
                    Grid.Column="1"
-                   Grid.ColumnSpan="2" Margin="10"
+                   Margin="10"
                    HorizontalAlignment="center"
                    FontSize="20"
                    Text ="{Binding EasternZodiac, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
         </TextBlock>
         <TextBlock Grid.Row="4" 
                    Grid.Column="1"
-                   Grid.ColumnSpan="2" Margin="10"
+                   Margin="10"
                    HorizontalAlignment="center"
                    FontSize="20"
                    Text ="{Binding WesternZodiac, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">

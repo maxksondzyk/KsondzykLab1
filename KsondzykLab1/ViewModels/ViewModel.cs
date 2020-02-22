@@ -15,9 +15,6 @@ namespace KsondzykLab1.ViewModels
         private RelayCommand<object> _startCommand;
         private User _user = new User();
         private bool _filled = false;
-        //private string _age;
-        //private string _easternZodiac;
-        //private string _westernZodiac;
 
         public DateTime? Birthday
         {
@@ -81,11 +78,11 @@ namespace KsondzykLab1.ViewModels
             EasternZodiac = "";
             await Task.Run(() =>
             {
-                 Thread.Sleep(3000);
+                 Thread.Sleep(700);
                 // var user = new User();
                 if (_user.CalculateAge().Equals("n"))
                 {
-                    MessageBox.Show("Некоректний вік!");
+                    MessageBox.Show("Incorrect date!");
                     Age = "";
                     WesternZodiac = "";
                     EasternZodiac = "";
@@ -93,15 +90,15 @@ namespace KsondzykLab1.ViewModels
 
                 else
                 {
-                    Age = $"Ваш вік: {_user.Age}";
+                    Age = $"Your age: {_user.Age}";
 
-                    WesternZodiac = $"Ваш західний знак зодіаку: {_user.CalculateWesternZodiac()}";
-                    EasternZodiac = $"Ваш східний знак зодіаку: {_user.CalculateEasternZodiac()}";
-                    Thread.Sleep(3000);
+                    WesternZodiac = $"Your western zodiac: {_user.CalculateWesternZodiac()}";
+                    EasternZodiac = $"Your eastern zodiac: {_user.CalculateEasternZodiac()}";
+                    Thread.Sleep(500);
 
                     if (_user.Birthday.Value.DayOfYear.Equals(DateTime.Today.DayOfYear))
                     {
-                        MessageBox.Show("З днем народження!");
+                        MessageBox.Show("Happy Birthday!");
                     }
 
                 }
